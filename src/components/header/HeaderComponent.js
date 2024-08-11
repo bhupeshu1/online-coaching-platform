@@ -1,9 +1,16 @@
 import React from 'react';
 import './style.css';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import MenuIcon from '@mui/icons-material/Menu';
 const HeaderComponent = () => {
   return (
     <div className='header-container'>
+      {/* menu icon for mobile view */}
+      <div className='hamburger-menu'>
+        <MenuIcon fontSize='large'/>
+
+      </div>
+
       {/* logo section */}
       <div className='logo-section'>
         <img

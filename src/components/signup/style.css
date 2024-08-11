@@ -35,8 +35,8 @@
   font-weight: 400;
   line-height: 21px;
 }
-.navbar-links li a:hover{
-  color: #03CCBA;
+.navbar-links li a:hover {
+  color: #03ccba;
 }
 .header-right-section {
   display: flex;
@@ -87,12 +87,41 @@
   line-height: 1.5;
   text-align: center;
 }
-.signup-button:hover{
+.signup-button:hover {
   color: white;
-  background-color: #12B4A7;
+  background-color: #12b4a7;
   /* background-color: #03CCBA; */
 }
 /* .down-icon{
   position: absolute;
   left: 10px;
 } */
+.hamburger-menu {
+  display: none;
+  background-color: #d1bdab;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+@media only screen and (max-width: 1028px) {
+  .header-container{
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-links {
+    display: none;
+  }
+  .contact-number {
+    display: none;
+  }
+  .login-button {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  .signup-button{
+    padding: 10px 12px;
+  }
+}
