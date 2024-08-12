@@ -1,52 +1,113 @@
-import React from 'react';
-import './style.css';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { useRef } from 'react';
+import { NavLink } from 'react-router-dom';
+
 const HeaderComponent = () => {
+  const navDialogRef = useRef(null);
+
+  function handleMenu() {
+    if (navDialogRef.current) {
+      navDialogRef.current.classList.toggle('hidden');
+      console.log(navDialogRef.current, 'this is menu');
+    }
+  }
+  function handleSignUp() {
+    alert('hello');
+    window.location.href = 'https://www.mytutor.co.uk/'; // Replace '/signup' with the actual URL you want to redirect to
+  }
+  const navlinkStyle = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? 'bold' : 'normal',
+      color: isActive ? '#03CCBA' : 'black',
+    };
+  };
   return (
-    <div className='header-container'>
-      {/* menu icon for mobile view */}
-      <div className='hamburger-menu'>
-        <MenuIcon fontSize='large'/>
-
-      </div>
-
+    <div className='flex justify-between items-center pl-5 pr-5 w-full h-20 bg-[#F7F2ED]'>
       {/* logo section */}
-      <div className='logo-section'>
+      <div>
         <img
-          className='header-logo'
+          className='w-24 h-6'
           src='https://cdn-prod.mytutor.co.uk/shared-assets/mytutor-logo.svg'
-        ></img>
+          alt='logo'
+        />
       </div>
       {/* nav items */}
-      <ul className='navbar-links'>
-        <li>
-          <a href='#find a tutor'>Find a tutor</a>
-        </li>
-        <li>
-          <a href='#How it works'>How it works</a>
-        </li>
-        <li>
-          <a href='#Prices'>Prices</a>
-        </li>
-        <li>
-          <a href='#Resources'>Resources</a>
-          {/* <KeyboardArrowDownIcon className='down-icon'/> */}
-        </li>
-        <li>
-          <a href='For schools'>For schools</a>
-        </li>
-        <li>
-          <a href='Become a tutor'>Become a tutor</a>
-        </li>
-      </ul>
+      <div className='hidden md:flex gap-5'>
+        <ul className='flex gap-5'>
+          <li>
+            <NavLink to='/' style={navlinkStyle}>
+              Find a tutor
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='Become a tutor' style={navlinkStyle}>
+              Become a tutor
+            </NavLink>
+          </li>
+        </ul>
+      </div>
       {/* button section */}
-      <div className='header-right-section'>
-        <p className='contact-number'>+44 (0) 203 773 6024</p>
-        <div className='login-signup-btn'>
-          <button className='login-button'>Log in</button>
-          <button className='signup-button'>Sign up</button>
+      <div className='hidden md:flex gap-4'>
+        <button className='bg-[#EBDED5] rounded-md text-center cursor-pointer pl-6 pr-6 pt-3 pb-3 font-medium'>
+          Log in
+        </button>
+        <button
+          onClick={handleSignUp}
+          className='rounded-md text-center cursor-pointer pl-6 pr-6 pt-3 pb-3 bg-[#03CCBA] hover:text-white hover:bg-[#006e63] font-medium'
+        >
+          Sign up
+        </button>
+      </div>
+      {/* hamburger menu icon */}
+      <div className='md:hidden'>
+        <MenuIcon
+          fontSize='large'
+          onClick={handleMenu}
+          className='cursor-pointer'
+        />
+      </div>
+      {/* mobile nav dialog */}
+      <div
+        id='nav-dialog'
+        ref={navDialogRef}
+        className='fixed md:hidden inset-0 p-3 bg-[#F7F2ED] hidden'
+      >
+        <div id='navbar' className='flex justify-between'>
+          <img
+            className='w-24 h-6'
+            src='https://cdn-prod.mytutor.co.uk/shared-assets/mytutor-logo.svg'
+            alt='logo'
+          />
+          <div className='cursor-pointer md:hidden'>
+            <CloseIcon fontSize='large' onClick={handleMenu} />
+          </div>
         </div>
+        <ul className='mt-5'>
+          <div className='flex flex-col items-center'>
+            <li className='py-2 mb-4'>
+              <a href='#find-a-tutor' className=''>
+                Find a tutor
+              </a>
+            </li>
+            <li className='py-2 mb-4'>
+              <a href='#become-a-tutor'>Become a tutor</a>
+            </li>
+          </div>
+          <li className='py-2 mb-4'>
+            <button className='w-full bg-[#EBDED5] rounded-md text-center cursor-pointer pt-3 pb-3 font-medium'>
+              Log in
+            </button>
+          </li>
+          <li className='py-2'>
+            <button
+              onClick={handleSignUp}
+              className='w-full rounded-md text-center cursor-pointer pt-3 pb-3 bg-[#03CCBA] hover:text-white hover:bg-[#006e63] font-medium'
+            >
+              Sign up
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   );
