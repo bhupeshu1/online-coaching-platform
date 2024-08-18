@@ -5,6 +5,7 @@ import ScienceIcon from '@mui/icons-material/Science';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { LOGO_URL } from '../../../utils/constants';
 
 // Array of subjects with corresponding icons
 const subjects = [
@@ -23,7 +24,7 @@ const SelectSubject = () => {
         <div className='flex items-center justify-between mb-10'>
           <img
             className='w-24 h-6'
-            src='https://cdn-prod.mytutor.co.uk/shared-assets/mytutor-logo.svg'
+            src={LOGO_URL}
             alt='MyTutor Logo'
           />
           <button className='bg-[#EBDED5] rounded-md text-center cursor-pointer p-3 font-medium'>

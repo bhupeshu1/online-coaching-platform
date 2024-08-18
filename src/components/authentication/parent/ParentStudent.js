@@ -16,7 +16,7 @@ const ParentStudent = () => {
         </button>
       </div>
       {/* md section */}
-      <div className='w-full h-lvh bg-green-400 flex flex-col'>
+      <div className='w-full h-lvh flex flex-col'>
         <h1 className=' text-center text-2xl font-medium leading-7 track-[-0.24438rem]'>
           Are you a parent or a student?
         </h1>
