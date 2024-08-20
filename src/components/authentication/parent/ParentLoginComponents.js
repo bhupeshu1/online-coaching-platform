@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ButtonComponents from '../../../components/button/ButtonComponents';
 import InfoIcon from '@mui/icons-material/Info';
 
 const ParentLoginComponents = ({login_image,login_title,login_description}) => {
-  const [email,setEmail]=useState('')
+  const [error,setError]=useState(false);
+  const handleRef=useRef();
 const  handleClick=()=>{
+  const emailRef=handleRef.current.value;
+  handleRef.current.focus();
+  if(emailRef===''){
+    setError(true)
+  }
+  else{
+    setError(false)
+    
+  }
 
 }
   return (
@@ -29,15 +39,19 @@ const  handleClick=()=>{
         <div>
           <label>Email address</label>
           <input
-          id='email-input'
+            ref={handleRef}
+            id='email-input'
             type='email'
             placeholder='Type your email address'
-            className='w-full rounded font-normal text-sm border border-[#ebded5] hover:border-[#00918a] outline-none shadow-none p-4 align-middle mt-2 bg-[#fff]'
-          ></input>
+            className={`w-full rounded font-normal text-sm border p-4 align-middle mt-2 bg-[#fff] ${
+              error ? 'border-red-500 bg-red-50 focus:bg-red-100' : 'border-[#ebded5] hover:border-[#00918a] focus:bg-white'
+            } outline-none shadow-none`}
+          />
+            {error && <p className='text-red-500 text-sm mt-1'>Email address is required.</p>}
         </div>
         {/* buttons */}
         <div className='flex flex-col gap-5 w-full mt-7 mb-4'>
-          <ButtonComponents label={'Log in with password'} />
+          <ButtonComponents label={'Log in with password'} onClick={handleClick} />
           <ButtonComponents
             label={'Log in with magic link'}
             variant='secondary'
