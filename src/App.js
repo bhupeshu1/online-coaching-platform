@@ -1,20 +1,19 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-// import SignupUser from './components/authentication/signup/SignupUser';
 import HeaderComponent from './components/header/HeaderComponent';
 import BecomeTutor from './pages/become/BecomeTutor';
-// import FindTutor from './pages/findtutor/FindTutor';
 import CustomDropdown from './components/dropdown/CustomDropdown';
 import GreatChoice from './components/authentication/Choice/GreatChoice';
 import SelectSubject from './components/authentication/subject/SelectSubject';
-// import ParentStudent from './components/authentication/parent/ParentStudent';
 import TimeLine from './components/authentication/timeline/TimeLine';
-import TutorLogin from './components/login/TutorLogin';
+import LoginLanding from './components/login/LoginLanding';
 import LoginCart from './components/carts/LoginCart';
 import FindTutor from './pages/findtutor/FindTutor';
-// import ParentLogin from './components/authentication/parent/ParentLogin';
 import LoginHeaderComponents from './components/authentication/LoginHeaderComponents';
 import ParentLoginComponents from './components/authentication/parent/ParentLoginComponents';
+import ParentLoginPage from './components/authentication/parent/ParentLoginPage';
+import ParentOrStudets from './components/authentication/parentorstu/ParentOrStudets';
+import FullNameSection from './components/authentication/fullname/FullNameSection';
 
 function App() {
   return (
@@ -32,10 +31,12 @@ function App() {
         <Route path="select-sub" element={<SelectSubject/>}></Route>
         <Route path="parent-login" element={<ParentLoginComponents/>}></Route>
         <Route path='range' element={<TimeLine/>}></Route>
-        {/* <Route path="parent-student" element={<ParentStudent/>} ></Route> */}
         <Route path="findtutor-cart" element={<LoginCart/>}></Route>
-        <Route path="tutor-login" element={<TutorLogin/>}></Route>
+        <Route path=":loginType?/login" element={<LoginLanding />}></Route>
         <Route path="back-close-components" element={<LoginHeaderComponents/>}></Route>
+        <Route path='parent-login-page' element={<ParentLoginPage/>}></Route>
+        <Route path='parent-or-stu' element={<ParentOrStudets/>}></Route>
+        <Route path="full-name" element={<FullNameSection/>}></Route>
 
       </Routes>
     </div>

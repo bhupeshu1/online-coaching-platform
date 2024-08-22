@@ -10,25 +10,26 @@ const TimeLine = (props) => {
 
   return (
     <div className='p-5 flex flex-col items-center'>
-      <div className='flex items-center gap-[50px]'>
+      <div className='flex items-center gap-4 flex-grow w-full max-w-[90%]'>
         <WestIcon fontSize='large' className='cursor-pointer' />
-        <div className='w-[600px] bg-[#EBEBEB] relative'>
+
+        <div className='flex-grow bg-[#EBEBEB] relative h-3 rounded overflow-hidden'>
           <div
             id='hello'
-            className='w-[30%] h-3 rounded bg-[#03CCBB]'
+            className='h-full rounded bg-[#03CCBB]'
             style={{ width: `${width}%` }}
           ></div>
         </div>
 
         <CloseIcon className='cursor-pointer' />
       </div>
-      {/* Button to trigger width increase */}
-      <button
+
+      {/* <button
         onClick={increaseWidth}
-        className='mt-3 p-1 bg-blue-500 text-white rounded'
+        className='mt-3 p-2 bg-blue-500 text-white rounded'
       >
         Increase Width
-      </button>
+      </button> */}
     </div>
   );
 };
