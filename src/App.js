@@ -10,15 +10,15 @@ import LoginLanding from './components/login/LoginLanding';
 import LoginCart from './components/carts/LoginCart';
 import FindTutor from './pages/findtutor/FindTutor';
 import LoginHeaderComponents from './components/authentication/LoginHeaderComponents';
-import ParentLoginComponents from './components/authentication/parent/ParentLoginComponents';
-import ParentLoginPage from './components/authentication/parent/ParentLoginPage';
+import ParentLoginComponents from './components/authentication/login/loginFormComponent';
+import ParentLoginPage from './components/authentication/login/loginPage';
 import ParentOrStudets from './components/authentication/parentorstu/ParentOrStudets';
 import FullNameSection from './components/authentication/fullname/FullNameSection';
 
 function App() {
   return (
     <div className='App'>
-      {/* <HeaderComponent /> */}
+      <HeaderComponent />
       <Routes>
         <Route path='/' element={<FindTutor />}>
           Find a tutor
