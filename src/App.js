@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import HeaderComponent from './components/header/HeaderComponent';
 import BecomeTutor from './pages/become/BecomeTutor';
-import CustomDropdown from './components/dropdown/CustomDropdown';
 import GreatChoice from './components/authentication/Choice/GreatChoice';
 import SelectSubject from './components/authentication/subject/SelectSubject';
 import TimeLine from './components/authentication/timeline/TimeLine';
@@ -14,6 +13,8 @@ import ParentLoginComponents from './components/authentication/login/loginFormCo
 import ParentLoginPage from './components/authentication/login/loginPage';
 import ParentOrStudets from './components/authentication/parentorstu/ParentOrStudets';
 import FullNameSection from './components/authentication/fullname/FullNameSection';
+import TutorHome from './pages/home/TutorHome';
+import DropdownMenu from './components/menu/DropdownMenu';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <Route path='Become a tutor' element={<BecomeTutor />}>
           Become a tutor
         </Route>
-        <Route path="customDropdown" element={<CustomDropdown/>}/>
+        <Route path="dropdown" element={<DropdownMenu/>}/>
         <Route path="Great-Choice" element={<GreatChoice/>}></Route>
         <Route path="select-sub" element={<SelectSubject/>}></Route>
         <Route path="parent-login" element={<ParentLoginComponents/>}></Route>
@@ -37,7 +38,7 @@ function App() {
         <Route path='parent-login-page' element={<ParentLoginPage/>}></Route>
         <Route path='parent-or-stu' element={<ParentOrStudets/>}></Route>
         <Route path="full-name" element={<FullNameSection/>}></Route>
-
+        <Route path="homepage" element={<TutorHome/>}></Route>
       </Routes>
     </div>
   );

@@ -1,9 +1,12 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useRef, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const HeaderComponent = () => {
+  // let btnName="Log in";
+  const navigate=useNavigate();
+  // const [btnName,setBtnName]=useState("Log in")
   const navDialogRef = useRef(null);
 
   function handleMenu() {
@@ -49,7 +52,12 @@ const HeaderComponent = () => {
       </div>
       {/* button section */}
       <div className='hidden md:flex gap-4'>
-        <button className='bg-[#EBDED5] rounded-md text-center cursor-pointer pl-6 pr-6 pt-3 pb-3 font-medium'>
+        <button  
+        onClick={()=>{
+          navigate('./login')
+          }} 
+               className='bg-[#EBDED5] rounded-md text-center cursor-pointer pl-6 pr-6 pt-3 pb-3 font-medium'>
+          {/* {btnName} */}
           Log in
         </button>
         <button
@@ -95,8 +103,14 @@ const HeaderComponent = () => {
             </li>
           </div>
           <li className='py-2 mb-4'>
-            <button className='w-full bg-[#EBDED5] rounded-md text-center cursor-pointer pt-3 pb-3 font-medium'>
-              Log in
+            <button 
+            onClick={()=>{
+              navigate('./login')
+              
+              }} 
+              className='w-full bg-[#EBDED5] rounded-md text-center cursor-pointer pt-3 pb-3 font-medium'>
+             {/* {btnName} */}
+             Log in
             </button>
           </li>
           <li className='py-2'>
