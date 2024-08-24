@@ -5,9 +5,9 @@ import { useParams } from 'react-router-dom';
 
 const ParentLoginComponents = () => {
   const params = useParams();
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(true);
   const emailInputRef = useRef();
 
   // Update email state on change and clear error if valid
@@ -18,13 +18,13 @@ const ParentLoginComponents = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
 
     if (!inputValue) {
-      setError('Email address is required.');
+      setError("Email address is required.");
       setIsEmailValid(false);
     } else if (!emailRegex.test(inputValue)) {
-      setError('Please enter a valid email address.');
+      setError("Please enter a valid email address.");
       setIsEmailValid(false);
     } else {
-      setError(''); // Clear the error if the email is valid
+      setError(""); // Clear the error if the email is valid
       setIsEmailValid(true); // Set email valid state to true
     }
   }
@@ -34,19 +34,19 @@ const ParentLoginComponents = () => {
     event.preventDefault();
 
     const emailValue = emailInputRef.current.value;
-    const emailRegex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
 
     // Validate email
     if (!emailValue) {
-      setError('Email address is required.');
+      setError("Email address is required.");
       setIsEmailValid(false);
       emailInputRef.current.focus(); // Focus the input field
     } else if (!emailRegex.test(emailValue)) {
-      setError('Please enter a valid email address.');
+      setError("Please enter a valid email address.");
       setIsEmailValid(false);
       emailInputRef.current.focus(); // Focus the input field
     } else {
-      setError('');
+      setError("");
       setIsEmailValid(true);
       console.log('Proceed with login action');
       // Add your login action logic here
@@ -103,8 +103,7 @@ const ParentLoginComponents = () => {
     return loginData;
   };
 
-  const { login_image, login_image_mobile, login_title, login_description } =
-    getLoginData();
+  const { login_image, login_image_mobile, login_title, login_description } = getLoginData();
 
   return (
     <div className='flex items-center w-full p-8 max-w-[1000px] shadow-md max-md:flex-col box-border bg-[#fff]'>
@@ -112,12 +111,12 @@ const ParentLoginComponents = () => {
       <div className='flex flex-col justify-between items-center gap-5 text-center bg-[#fff] w-1/2 max-md:w-full max-md:mb-7'>
         <img
           className='w-36 h-36 max-md:hidden'
-          src={login_image}
+          src={login_image} 
           alt='Login Illustration'
         />
         <img
           className='hidden max-md:flex'
-          src={login_image_mobile}
+          src={login_image_mobile} 
           alt='Mobile Login Illustration'
         />
         <h2 className='max-md:hidden font-bold'>{login_title}</h2>
@@ -138,9 +137,9 @@ const ParentLoginComponents = () => {
             type='email'
             value={email}
             placeholder='Type your email address'
-            className='w-full rounded font-normal text-sm border p-4 align-middle mt-2 bg-[#fff]'
+            className={`w-full outline-none rounded font-normal text-sm border p-4 align-middle mt-2 bg-[#fff] ${!isEmailValid ? 'border-red-500 focus:border-red-300 focus:ring-red-300' : 'focus:border-[#03ccba] focus:ring-[#03ccba]'}`}
           />
-          <div style={{ color: 'red' }}>{error}</div>
+          <div style={{ color: "red" }}>{error}</div>
         </div>
 
         {/* buttons */}
@@ -148,17 +147,13 @@ const ParentLoginComponents = () => {
           <ButtonComponents
             label={'Log in with password'}
             onClick={handleButtonClick}
-            className={`w-full p-4 ${
-              isEmailValid ? 'bg-[#03ccba]' : 'bg-[#ebded5]'
-            }`}
+            className={`w-full p-4 ${isEmailValid? 'bg-[#03ccba]':'bg-[#ebded5]'}`}
           />
           <ButtonComponents
             label={'Log in with magic link'}
             variant='secondary'
             onClick={handleButtonClick}
-            className={`w-full p-4 ${
-              isEmailValid ? 'bg-[#03ccba]' : 'bg-[#ebded5]'
-            }`}
+            className={`w-full p-4 ${isEmailValid? 'bg-[#03ccba]':'bg-[#ebded5]'}`}
           />
         </div>
 
