@@ -1,6 +1,6 @@
 import React from 'react';
 const VARIANT_STYLES = {
-  primary: 'bg-[#ebded5] hover:bg-[#03ccba] text-[#242424] w-full max-md:text-nowrap overflow-hidden min-w:',
+  primary: 'bg-[#ebded5] hover:bg-[#03ccba] text-[#242424] w-full max-md:text-nowrap overflow-hidden',
   secondary: 'bg-[#03ccba] hover:bg-[#00918a] text-[#242424] hover:text-white overflow-hidden',
   success: 'bg-[#EBDED5] hover:bg-[#c3ae9e] text-[#242424] overflow-hidden',
   danger: 'bg-red-500 hover:bg-red-600 text-white overflow-hidden',
