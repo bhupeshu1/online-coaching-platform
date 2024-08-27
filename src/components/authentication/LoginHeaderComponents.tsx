@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
+
+
 const LoginHeaderComponents = ({ back_icon, cross_icon, label }) => {
   const myParam = useParams();
   const getLoginLabel = () => {

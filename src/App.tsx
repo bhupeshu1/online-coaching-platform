@@ -15,6 +15,7 @@ import ParentOrStudets from './components/authentication/parentorstu/ParentOrStu
 import FullNameSection from './components/authentication/fullname/FullNameSection';
 import TutorHome from './pages/home/TutorHome';
 import DropdownMenu from './components/menu/DropdownMenu';
+import React from 'react';
 
 function App() {
   return (

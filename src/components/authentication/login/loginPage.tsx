@@ -50,7 +50,7 @@ const ParentLoginPage = () => {
           </p>
         </div>
         <div className='w-full md:w-auto'>
-          <ButtonComponents label={'Sign up'} />
+          <ButtonComponents label={'Sign up'} onClick={undefined} />
         </div>
       </div>
     </div>

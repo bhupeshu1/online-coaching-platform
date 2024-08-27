@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "ES6",
+    /* Other options */
+    "outDir": "./dist",  /* Specify an output folder for all emitted files */
+    "allowJs": true,      /* Allow JavaScript files to be a part of your program */
+    "checkJs": true,      /* Enable error reporting in type-checked JavaScript files */
+    /* Other options */
+  },
+  "include": ["./src/**/*.{ts,tsx,js,jsx}"],  // Include TypeScript, JavaScript, and JSX/TSX files
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
