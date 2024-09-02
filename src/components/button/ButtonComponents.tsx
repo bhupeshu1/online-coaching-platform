@@ -1,4 +1,5 @@
 import React from 'react';
+
 const VARIANT_STYLES = {
   primary: 'bg-[#ebded5] hover:bg-[#03ccba] text-[#242424] w-full max-md:text-nowrap overflow-hidden',
   secondary: 'bg-[#03ccba] hover:bg-[#00918a] text-[#242424] hover:text-white overflow-hidden',
@@ -13,12 +14,22 @@ const SIZE_STYLES = {
   large: 'px-8 py-4 text-lg',
 };
 
-const ButtonComponents = ({
+interface ButtonComponentsProps {
+  label: string;
+  variant?: keyof typeof VARIANT_STYLES;
+  size?: keyof typeof SIZE_STYLES;
+  onClick?: () => void;
+  disabled?: boolean;
+  className?: string; // Optional className prop for custom styles
+}
+
+const ButtonComponents: React.FC<ButtonComponentsProps> = ({
   label,
   variant = 'primary',
   size = 'medium',
   onClick,
   disabled = false,
+  className = '', // Default empty string
   ...rest
 }) => {
   const baseStyles =
@@ -29,15 +40,19 @@ const ButtonComponents = ({
     ? 'opacity-50 cursor-not-allowed'
     : 'cursor-pointer';
 
-  const combinedStyles = `${baseStyles} ${variantStyles} ${sizeStyles} ${disabledStyles}`;
+  // Combine all styles and add any additional styles passed via className prop
+  const combinedStyles = `${baseStyles} ${variantStyles} ${sizeStyles} ${disabledStyles} ${className}`;
+
   return (
-  <button  className={combinedStyles}
-  onClick={onClick}
-  disabled={disabled}
-  {...rest}>
-    {label}
+    <button
+      className={combinedStyles}
+      onClick={onClick}
+      disabled={disabled}
+      {...rest}
+    >
+      {label}
     </button>
-  )
+  );
 };
 
 export default ButtonComponents;
