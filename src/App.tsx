@@ -17,6 +17,7 @@ import TutorHome from './pages/home/TutorHome';
 import DropdownMenu from './components/menu/DropdownMenu';
 import React from 'react';
 import PasswordInput from './components/authentication/PasswordInput';
+import TutorCart from './components/carts/TutorCart';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="full-name" element={<FullNameSection/>}></Route>
         <Route path="homepage" element={<TutorHome/>}></Route>
         <Route path="password" element={<PasswordInput/>}></Route>
+        <Route path="tutorcart" element={<TutorCart/>}></Route>
       </Routes>
     </div>
   );
