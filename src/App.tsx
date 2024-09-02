@@ -16,6 +16,7 @@ import FullNameSection from './components/authentication/fullname/FullNameSectio
 import TutorHome from './pages/home/TutorHome';
 import DropdownMenu from './components/menu/DropdownMenu';
 import React from 'react';
+import PasswordInput from './components/authentication/PasswordInput';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path='parent-or-stu' element={<ParentOrStudets/>}></Route>
         <Route path="full-name" element={<FullNameSection/>}></Route>
         <Route path="homepage" element={<TutorHome/>}></Route>
+        <Route path="password" element={<PasswordInput/>}></Route>
       </Routes>
     </div>
   );

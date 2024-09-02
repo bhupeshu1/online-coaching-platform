@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
 import WestIcon from '@mui/icons-material/West';
 import CloseIcon from '@mui/icons-material/Close';
 
-const TimeLine = (props) => {
-  const [width, setWidth] = useState(30);
-  const increaseWidth = () => {
-    setWidth((prevWidth) => Math.min(prevWidth + 10, 100));
-  };
+const TimeLine = () => {
+  // const [width, setWidth] = useState(30);
+  // const increaseWidth = () => {
+  //   setWidth((prevWidth) => Math.min(prevWidth + 10, 100));
+  // };
 
   return (
     <div className='p-5 flex flex-col items-center'>

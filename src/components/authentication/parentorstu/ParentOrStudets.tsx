@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonComponents from '../../button/ButtonComponents';
-import LoginHeaderComponents from '../LoginHeaderComponents';
+// import LoginHeaderComponents from '../LoginHeaderComponents';
 import TimeLine from '../timeline/TimeLine';
 
 const ParentOrStudets = () => {

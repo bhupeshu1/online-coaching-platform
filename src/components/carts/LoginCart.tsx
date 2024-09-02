@@ -2,7 +2,6 @@ import React from 'react';
 import ButtonComponents from '../button/ButtonComponents';
 
 const LoginCart = ({
-  className,
   cart_image,
   cart_heading,
   cart_description,
