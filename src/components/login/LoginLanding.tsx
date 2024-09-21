@@ -63,7 +63,7 @@ const LoginLanding = () => {
             cart_image={item.cart_small_screen_image}
             button_text={item.btn_text}
             onClick={handleLoginCtaClick} // Correctly pass the function
-          />
+            cart_heading={''} cart_description={''} userType={''}          />
         ))}
       </div>
 

@@ -24,13 +24,14 @@ function App() {
     <div className='App'>
       <HeaderComponent />
       <Routes>
-        <Route path='/' element={<FindTutor />}>
+        <Route path='/' element={<TutorHome />}>
           Find a tutor
         </Route>
         <Route path='Become a tutor' element={<BecomeTutor />}>
           Become a tutor
         </Route>
         <Route path="dropdown" element={<DropdownMenu/>}/>
+        <Route path='find-tutor' element={<FindTutor/>}></Route>
         <Route path="Great-Choice" element={<GreatChoice/>}></Route>
         <Route path="select-sub" element={<SelectSubject/>}></Route>
         <Route path="parent-login" element={<ParentLoginComponents/>}></Route>

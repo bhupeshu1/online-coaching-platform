@@ -15,10 +15,7 @@ const HeaderComponent = () => {
       console.log(navDialogRef.current, 'this is menu');
     }
   }
-  function handleSignUp() {
-    alert('hello');
-    window.location.href = 'https://www.mytutor.co.uk/'; // Replace '/signup' with the actual URL you want to redirect to
-  }
+  
   const navlinkStyle = ({ isActive }) => {
     return {
       fontWeight: isActive ? 'bold' : 'normal',
@@ -61,7 +58,9 @@ const HeaderComponent = () => {
           Log in
         </button>
         <button
-          onClick={handleSignUp}
+          onClick={()=>{
+            navigate('./select-sub')
+            }} 
           className='rounded-md text-center cursor-pointer pl-6 pr-6 pt-3 pb-3 bg-[#03CCBA] hover:text-white hover:bg-[#006e63] font-medium'
         >
           Sign up
@@ -115,7 +114,9 @@ const HeaderComponent = () => {
           </li>
           <li className='py-2'>
             <button
-              onClick={handleSignUp}
+              onClick={()=>{
+                navigate('./select-sub')
+                }} 
               className='w-full rounded-md text-center cursor-pointer pt-3 pb-3 bg-[#03CCBA] hover:text-white hover:bg-[#006e63] font-medium'
             >
               Sign up
